@@ -1,0 +1,16 @@
+# Add that trailing slash to avoid redirect
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Contact
+  url: /contact/
+- title: Information
+  url: /information/
+  sublinks:
+    - title: Sub-item 1
+      url: /information/si1
+    - title: Sub-item 2
+      url: /information/si2
+    - title: Sub-item 3
+      url: /information/si3

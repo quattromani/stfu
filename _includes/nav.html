@@ -1,0 +1,27 @@
+<nav role="navigation" aria-label="Primary Navigation">
+  <ul role="menubar" itemscope itemtype="http://www.schema.org/SiteNavigationElement" aria-hidden="false">
+    {% assign links = site.data.nav %}
+    {% for link in links %}
+    {% assign current = nil %}
+    {% if page.url contains link.url %}
+    {% assign current = 'aria-current="page"' %}
+    {% endif %}
+    {% if link.sublinks %}
+    <li role="menuitem" itemprop="name" aria-haspopup="true">
+      <a href="{{ site.baseurl }}{{ link.url }}" itemprop="url" {{ current }} aria-haspopup="true">{{ link.title }}</a>
+      <ul role="menu" aria-hidden="true">
+        {% for sublink in link.sublinks %}
+        <li role="menuitem" itemprop="name" tabindex="-1">
+          <a href="{{ link.url | prepend: site.baseurl }}{{ sublink.url }}" {{ current }} itemprop="url">{{ sublink.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% else %}
+    <li role="menuitem" itemprop="name">
+      <a href="{{ link.url | prepend: site.baseurl }}" itemprop="url" {{ current }}>{{ link.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

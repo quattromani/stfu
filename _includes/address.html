@@ -1,0 +1,9 @@
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+  <span itemprop="name">{{ site.title }}</span><br>
+  <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">{{ site.map.address }}</span><br>
+    <span itemprop="addressLocality">{{ site.map.city }}</span>,
+    <span itemprop="addressRegion">{{ site.map.state }}</span> <span itemprop="postalCode">{{ site.map.zip }}</span>
+  </address>
+  Phone: <span itemprop="telephone"><a href="tel:{{ site.phone }}">{{ site.phone }}</a></span>
+</div>

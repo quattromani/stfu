@@ -1,0 +1,7 @@
+---
+layout: null
+sitemap: exclude
+search: exclude
+---
+
+{{ site.email }}
